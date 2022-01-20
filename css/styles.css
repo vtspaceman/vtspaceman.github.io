@@ -1,0 +1,65 @@
+/* general styling */
+body{
+  background:#222;
+}
+
+/* this will set up the container for the images */
+.gallerycontainer{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(100px, 800px));
+  width: 100%; /*the width of our container*/
+  gap:20px;
+}
+
+/* this will make our images responsive */
+.images{
+  max-width: 100%;
+  min-height:100%;
+}
+
+/* this is needed to position the overlay so it knows where to go */
+.imgcontainer{
+  position:relative;
+  width: 100%;
+
+}
+
+/* These are the styles for the overlay effect */
+.overlay{
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background-color:rgba(255,255,255,.4);
+  width:100%;
+  overflow:hidden;
+  transform:scale(0);
+  transition-duration:500ms;
+  transition-property:transform;
+  transition-timing-function: ease-in-out;
+}
+
+/* When you mouse over the image container, the overlay will zoom a little */
+.imgcontainer:hover .overlay{
+  transform:scale(1);
+}
+
+.text{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  /* transform:translateY(100px); */
+
+}
+
+h2, p{
+    font-family: monospace;
+}
+h2{
+  font-size: 3em;
+}
+
+p{
+  font-size: 1.5em;
+}
